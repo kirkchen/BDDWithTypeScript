@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>BDD with TypeScript</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Simple Todo 
+        </h1>
+        <div class="row">
+            <div class="span12 form-inline">
+                <fieldset>
+                    <legend>Create New Todo</legend>
+                    <label for="content">Please enter content:</label>
+                    <input id="content" type="text" class="input-large" data-bind="value: newTodoContent" />
+                    <button class="btn" data-bind="click: createNewTodo">Create</button>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <fieldset>
+                    <legend>Todo List</legend>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Content</th>
+                                <th>Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: todoList">
+                            <tr>
+                                <td class="span2">
+                                    <span data-bind="text : $index() +1">1</span>
+                                </td>
+                                <td class="span8">
+                                    <span data-bind="text: $data">Test1</span>                                    
+                                </td>
+                                <td>
+                                        <button type="button" class="btn" data-bind="click: $root.removeTodo">Delete</button>
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/Libs/jquery-1.9.1.js"></script>
+    <script src="Scripts/Libs/knockout-2.2.1.js"></script>
+    <script src="Scripts/App/ViewModel/todoViewModel.js"></script>
+    <script>
+        var model = new App.ViewModel.TodoViewModel();
+        ko.applyBindings(model, $('.container').get(0));
+    </script>
+</body>
+</html>
