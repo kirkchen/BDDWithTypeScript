@@ -24,5 +24,5 @@ you should exec build.bat to generate js file from typescript file.
 ## Reference
 - http://www.slideshare.net/hatelove1/bdd-in-net - BDD in .Net by Joey
 - http://www.typescriptlang.org/Playground/ - TypeScript Official Site
-- http://pivotal.github.com/jasmine/ - Jasmine.js JavaScript Test Framework
+- https://jasmine.github.io/ - Jasmine.js JavaScript Test Framework
 
